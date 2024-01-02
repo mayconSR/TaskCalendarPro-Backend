@@ -1,0 +1,40 @@
+{
+  "name": "taskcalendarpro-backend",
+  "version": "1.0.0",
+  "description": "Seja bem-vindo ao repositório TaskCalendarPro-Backend! Este repositório é o coração do TaskCalendarPro, abrigando toda a lógica do servidor, APIs e integrações para o nosso aplicativo de lista de tarefas. Construído sobre Node.js, este back-end é robusto e escalável, garantindo que as operações de gerenciamento de tarefas sejam eficientes e seguras.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayconSR/TaskCalendarPro-Backend.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Backend",
+    "API",
+    "RESTful",
+    "Database",
+    "integration",
+    "security"
+  ],
+  "author": "Maycon Silva Rodrigues",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mayconSR/TaskCalendarPro-Backend/issues"
+  },
+  "homepage": "https://github.com/mayconSR/TaskCalendarPro-Backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.0.3",
+    "nodemon": "^3.0.2"
+  }
+}
