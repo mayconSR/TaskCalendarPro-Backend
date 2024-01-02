@@ -23,7 +23,6 @@ Um passo a passo que informa o que você deve executar para ter um ambiente de d
 
 Claro, posso ajudar a preparar um README básico para o seu projeto de back-end. O README é um documento importante para qualquer projeto, pois fornece informações essenciais sobre o que é o projeto, como configurá-lo e usá-lo. Aqui está um exemplo de estrutura que você pode adaptar para o seu projeto:
 
-Exemplo de README para Projeto Back-End
 markdown
 Copy code
 # Nome do Projeto Back-End
