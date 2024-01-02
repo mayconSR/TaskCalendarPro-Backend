@@ -2,19 +2,19 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 
 const userService = {
-    // Criar um novo usuário com senha hasheada
+    // Criar um novo usuário
     async createUser(data) {
         try {
             const hashedPassword = await bcrypt.hash(data.password, 10);
             const newUser = new User({ ...data, password: hashedPassword });
             await newUser.save();
-            return newUser.toObject({ versionKey: false, getters: true }); // Exclui informações sensíveis
+            return newUser.toObject({ versionKey: false, getters: true });
         } catch (error) {
             throw error;
         }
     },
 
-    // Obter todos os usuários excluindo a senha
+    // Obter todos os usuários
     async getAllUsers() {
         try {
             const users = await User.find().select('-password');
@@ -24,7 +24,7 @@ const userService = {
         }
     },
 
-    // Obter um usuário pelo ID, excluindo a senha
+    // Obter um usuário pelo ID
     async getUserById(userId) {
         try {
             const user = await User.findById(userId).select('-password');
@@ -34,7 +34,7 @@ const userService = {
         }
     },
 
-    // Atualizar um usuário pelo ID, com hash na senha se alterada
+    // Atualizar um usuário pelo ID
     async updateUser(userId, updateData) {
         try {
             if (updateData.password) {
@@ -51,7 +51,7 @@ const userService = {
     async deleteUser(userId) {
         try {
             const deletedUser = await User.findByIdAndDelete(userId);
-            return deletedUser; // Considere remover a senha mesmo na exclusão, por precaução
+            return deletedUser;
         } catch (error) {
             throw error;
         }

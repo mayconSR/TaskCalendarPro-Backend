@@ -11,6 +11,7 @@ exports.createTask = async (req, res) => {
     }
 };
 
+
 // Ler todas as tarefas do usuário
 exports.getAllTasks = async (req, res) => {
     try {
@@ -21,7 +22,9 @@ exports.getAllTasks = async (req, res) => {
     }
 };
 
-// Ler uma tarefa específica pelo ID, verificando se pertence ao usuário
+
+
+// Ler uma tarefa específica pelo ID
 exports.getTaskById = async (req, res) => {
     try {
         const task = await Task.findOne({ _id: req.params.id, user: req.user.id });
@@ -34,7 +37,9 @@ exports.getTaskById = async (req, res) => {
     }
 };
 
-// Atualizar uma tarefa específica pelo ID, verificando se pertence ao usuário
+
+
+// Atualizar uma tarefa específica pelo ID
 exports.updateTask = async (req, res) => {
     try {
         const task = await Task.findOneAndUpdate({ _id: req.params.id, user: req.user.id }, req.body, { new: true, runValidators: true });
@@ -47,7 +52,9 @@ exports.updateTask = async (req, res) => {
     }
 };
 
-// Deletar uma tarefa específica pelo ID, verificando se pertence ao usuário
+
+
+// Deletar uma tarefa específica pelo ID
 exports.deleteTask = async (req, res) => {
     try {
         const task = await Task.findOneAndDelete({ _id: req.params.id, user: req.user.id });
