@@ -15,3 +15,5 @@ const authMiddleware = (req, res, next) => {
     res.status(400).send('Token inválido');
   }
 };
+
+module.exports = authMiddleware;

@@ -1,34 +1,6 @@
 # TaskCalendarPro-Backend
 
-Descrição breve do projeto: Uma API back-end desenvolvida em Node.js com Express, que oferece funcionalidades de gerenciamento de tarefas e usuários.
-
-## Começando
-
-Estas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
-
-### Pré-requisitos
-
-O que você precisa para instalar o software e como instalá-lo:
-
-- Node.js
-- npm ou yarn
-- MongoDB
-
-### Instalação
-
-Um passo a passo que informa o que você deve executar para ter um ambiente de desenvolvimento em execução:
-
-1. Clone o repositório:
-
-
-Claro, posso ajudar a preparar um README básico para o seu projeto de back-end. O README é um documento importante para qualquer projeto, pois fornece informações essenciais sobre o que é o projeto, como configurá-lo e usá-lo. Aqui está um exemplo de estrutura que você pode adaptar para o seu projeto:
-
-Exemplo de README para Projeto Back-End
-markdown
-Copy code
-# Nome do Projeto Back-End
-
-Descrição breve do projeto: Uma API back-end desenvolvida em Node.js com Express, que oferece funcionalidades de gerenciamento de tarefas e usuários.
+Uma API back-end desenvolvida em Node.js com Express, que oferece funcionalidades de gerenciamento de tarefas e usuários.
 
 ## Começando
 
