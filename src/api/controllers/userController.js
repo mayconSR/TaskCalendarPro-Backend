@@ -1,4 +1,6 @@
 const userService = require('../services/userServices');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
 
 const userController = {
     // Criar um novo usuário
@@ -55,7 +57,29 @@ const userController = {
         } catch (error) {
             res.status(500).json({ message: 'Erro ao deletar usuário. ' + error.message });
         }
+    },
+    async login(req, res) {
+        try {
+            const { email, password } = req.body;
+            const user = await userService.getUserByEmail(email);
+    
+            if (!user) {
+                return res.status(400).json({ message: 'Usuário não encontrado.' });
+            }
+    
+            const validPassword = await bcrypt.compare(password, user.password);
+            if (!validPassword) {
+                return res.status(400).json({ message: 'Senha inválida.' });
+            }
+    
+            const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+            res.cookie('token', token, { httpOnly: true, secure: true, sameSite: 'None', maxAge: 3600000 });
+            res.status(200).json({ message: 'Login bem sucedido' });
+        } catch (error) {
+            res.status(500).json({ message: 'Erro ao fazer login. ' + error.message });
+        }
     }
+
 };
 
 module.exports = userController;

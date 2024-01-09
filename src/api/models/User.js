@@ -4,8 +4,7 @@ const bcrypt = require('bcryptjs');
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     email: {
         type: String,
@@ -18,7 +17,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // Adicione outros campos conforme necessário
 });
 
 // Middleware do Mongoose para hash da senha antes de salvar

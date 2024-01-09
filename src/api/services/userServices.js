@@ -5,8 +5,7 @@ const userService = {
     // Criar um novo usuário
     async createUser(data) {
         try {
-            const hashedPassword = await bcrypt.hash(data.password, 10);
-            const newUser = new User({ ...data, password: hashedPassword });
+            const newUser = new User(data);
             await newUser.save();
             return newUser.toObject({ versionKey: false, getters: true });
         } catch (error) {
@@ -14,6 +13,14 @@ const userService = {
         }
     },
 
+    async getUserByEmail(email) {
+        try{
+            const user = await User.findOne({ email }).select('+password');
+            return user;
+        } catch (error) {
+            throw error;
+        }
+    },
     // Obter todos os usuários
     async getAllUsers() {
         try {
